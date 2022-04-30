@@ -175,8 +175,8 @@ history = model.fit(train_generator, #학습할 입력데이터
 
 
 #임의의 입력에 대한 모델의 출력값을 확인
-classes = model.predict(images,           # 예측하고 싶은 데이터(테스트 이미지데이터)
-                        batch_size=10)    # 배치크기
+classes = model.predict(images)           # 예측하고 싶은 데이터(테스트 이미지데이터)
+
 
 index=np.argmax(classes[0]) #분류된 결과값 중에 가장 큰 값의 인덱스
 
