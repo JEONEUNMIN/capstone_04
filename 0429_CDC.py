@@ -13,6 +13,32 @@ validation_generator =  validation_datagen.flow_from_directory(validation_dir,
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 model = tf.keras.models.Sequential([    #각 레이어에 정확히 하나의 입력 텐서와 하나의 출력 텐서가 있는 레이어 스택에 적합한 모델
     # padding : 경계처리, 데이터의 손실을 방지하기 위해 same으로 설정
     # input_shape : 샘플 수를 제외한 입력 형태를 정의함
@@ -48,6 +74,32 @@ model.summary()     # 모델 구조를 확인
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #loss: 손실함수, 모델 최적화에 사용되는 목적 함수, 3개 이상의 클래스를 분류하는 multiclassification이라서 "categorical_crossentropy"을 사용해야함
 #다중 분류 손실함수로 출력값이 one-hot encoding 된 결과로 나오고 실측 결과와의 비교시에도 실측 결과는 one-hot encoding 형태로 구성
 #네트웍 레이어 구성시 마지막에 Dense(3, activation='softmax') 로 3개의 클래스 각각 별로 positive 확률값이 나옴
@@ -60,6 +112,32 @@ model.compile(loss="categorical_crossentropy", optimizer="adam",  metrics = ['ac
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 history = model.fit(train_generator, #학습할 입력데이터
                     batch_size=256, #batch_size: 몇 개의 샘플로 가중치를 갱신할 것인지 지정(20이면 20개를 학습하고 가중치를 갱신, 전체 데이터가 100이라면 가중치 갱신은 100/20=5번 일어남) 
                     #batch_size를 크게하면 1epochs 시간이 줄어듬, size를 크게하고 epoch를 많이 할 것인지, 작게하고 epoch를 덜 할 것인지 결정해야함
@@ -68,6 +146,31 @@ history = model.fit(train_generator, #학습할 입력데이터
                    )
 #model.fit() 함수의 리턴 값인 학습이력(history)을 history에 저장
 #매 epoch마다 loss(훈련 손실값), accuracy(훈련 정확도), val_loss(검증 손실값), val_acc(검증 정확도) 값들이 저장되어있음
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
